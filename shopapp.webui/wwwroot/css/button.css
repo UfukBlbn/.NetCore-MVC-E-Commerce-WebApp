@@ -1,0 +1,17 @@
+
+.a {
+  display: inline-block;
+  border-radius: 4px;
+  background-color:cornflowerblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  width: 90px;
+  font-size: 14px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+
+
+

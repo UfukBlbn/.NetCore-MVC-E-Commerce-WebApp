@@ -1,0 +1,15 @@
+ 
+ <div class="list-group">
+    <a href="/products" class="list-group-item list-group-item-action">All Categories</a>
+    
+    @foreach (var item in Model)
+    {
+         <a 
+        asp-controller="shop" 
+        asp-action="List" 
+        asp-route-category="@item.ProductUrl"
+        class="list-group-item list-group-item-action  @(ViewBag.SelectedCategory == item.ProductUrl?"active":"")">
+        @item.Name
+        </a> 
+    } 
+</div>   

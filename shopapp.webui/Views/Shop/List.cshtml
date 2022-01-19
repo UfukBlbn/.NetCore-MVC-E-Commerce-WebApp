@@ -1,0 +1,61 @@
+@model ProductListViewModel
+
+<link rel="stylesheet" href="~/css/pagination.css">
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("Categories")
+    </div>
+        <div class="col-md-9">
+            <div class="row">                  
+                 @foreach (var product in Model.Products)
+                     {    
+                        <div class="col-md-4">
+                            @await Html.PartialAsync("_product", product)   
+                        </div>       
+                     }                   
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+<div class="demo">
+    <nav class="pagination-outer" aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item">
+                <a href="/products?page=1" class="page-link " aria-label="Previous">
+                    <span aria-hidden="true">«</span>
+                </a>
+            </li>
+            @for (int i = 0; i < Model.PageInfo.totalPages(); i++)
+            {
+                if(String.IsNullOrEmpty(Model.PageInfo.CurrentCategory))
+                {
+                    <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
+                        <a class="page-link" href="/products?page=@(i+1)">
+                            @(i+1)
+                        </a></li>
+                }
+                else
+                {
+                     <li class="page-item @(Model.PageInfo.CurrentPage==i+1?"active":"")">
+                        <a class="page-link" href="/products/@Model.PageInfo.CurrentCategory?page=@(i+1)">
+                            @(i+1)
+                        </a></li>
+                }
+              
+            }
+           <li class="page-item">
+                <a href="/products?page=@Model.PageInfo.totalPages()" class="page-link" aria-label="Next">
+                    <span aria-hidden="true">»</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+@section Scripts
+{
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+}

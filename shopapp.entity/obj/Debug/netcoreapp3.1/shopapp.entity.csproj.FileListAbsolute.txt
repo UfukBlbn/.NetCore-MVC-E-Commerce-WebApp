@@ -1,0 +1,9 @@
+C:\Users\casper\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.deps.json
+C:\Users\casper\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.dll
+C:\Users\casper\shopapp\shopapp.entity\bin\Debug\netcoreapp3.1\shopapp.entity.pdb
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.AssemblyInfoInputs.cache
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.AssemblyInfo.cs
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.csproj.CoreCompileInputs.cache
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.dll
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.pdb
+C:\Users\casper\shopapp\shopapp.entity\obj\Debug\netcoreapp3.1\shopapp.entity.csprojAssemblyReference.cache

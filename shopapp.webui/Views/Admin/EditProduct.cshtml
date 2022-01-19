@@ -1,0 +1,96 @@
+@{
+    Layout="_adminpanellayout";
+}
+
+@model ProductModel
+
+<div class="container-fluid" style="margin-bottom: 250px;">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Edit Product</h6>
+        </div>
+        <div class="card-body">
+            <div class="row"  >
+                <form asp-controller="Admin" asp-action="EditProduct" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-10">
+                                <input type="hidden" name="ProductId" value="@Model.ProductId">
+                                <div class="form-group row">
+                                    <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" asp-for="Name">
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" asp-for="Url">
+                                        <span asp-validation-for="Url" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label  asp-for="Description" class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <textarea class="form-control" asp-for="Description"></textarea>
+                                        <span asp-validation-for="Description" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label  asp-for="Price" class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <input class="form-control" asp-for="Price">
+                                        <span asp-validation-for="Price" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label asp-for="ImgUrl" class="col-sm-2 col-form-label"></label>
+                                    <div class="col-sm-10">
+                                        <input type="hidden" asp-for="ImgUrl">
+                                        <img src="~/img/@Model.ImgUrl" width="80"/>
+                                        <input type="file" name="file">
+                                        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-10 offset-sm-2">
+                                        <button type="submit" class="btn btn-primary">Update Product</button>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-2">
+                            @* Seçilen kategorilerin view a aktarımı *@
+                            @for (int i = 0; i < Model.SelectedCategories.Count; i++)
+                            {
+                                <input type="hidden" name="SelectedCategories[@i].CategoryId" value="name="Model.SelectedCategories[@i].CategoryId">
+                                <input type="hidden" name="SelectedCategories[@i].Name" value="name="Model.SelectedCategories[@i].Name">
+                                
+                            }
+
+                            @foreach (var item in (List<Category>)@ViewBag.Categories)
+                            {
+                            <div class="form-check">
+                                    <input class="form-check-input" type="checkbox"
+                                    name="categoryIds"
+                                    value="@item.CategoryId"
+                                    id="category_@(item.CategoryId)"
+                                    @(Model.SelectedCategories.Any(i=>i.CategoryId==item.CategoryId)?"checked":"")>
+                                    <label class="form-check-label" for="category_@(item.CategoryId)">
+                                        @item.Name
+                                    </label>
+                            </div>
+                            }
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

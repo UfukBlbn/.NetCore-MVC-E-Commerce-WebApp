@@ -1,0 +1,14 @@
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.business.deps.json
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.business.dll
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.business.pdb
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.data.dll
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.entity.dll
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.entity.pdb
+C:\Users\casper\shopapp\shopapp.business\bin\Debug\netcoreapp3.1\shopapp.data.pdb
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.AssemblyInfoInputs.cache
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.AssemblyInfo.cs
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.csproj.CoreCompileInputs.cache
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.csproj.CopyComplete
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.dll
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.pdb
+C:\Users\casper\shopapp\shopapp.business\obj\Debug\netcoreapp3.1\shopapp.business.csprojAssemblyReference.cache

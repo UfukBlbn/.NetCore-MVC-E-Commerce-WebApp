@@ -1,0 +1,39 @@
+@* 
+@model Product
+
+<form method="POST">
+    <div class="form group">
+        <label for="Name">Product Name</label>
+        <input asp-for="Name" class="form-control" value="@Model.Name">
+         //Uyarı spanları 
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form group">
+        <label for="Price">Product Price</label>
+        <input asp-for="Price" class="form-control" value="@Model.Price">
+         //Uyarı spanları 
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="form group">
+        <label for="Description">Product Description</label>
+        <textarea asp-for="Description" class="form-control" value="@Model.Description"></textarea>
+         //Uyarı spanları 
+         <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form group">
+        <label for="ImgUrl">Product Image</label>
+        <input asp-for="ImgUrl" class="form-control" value="@Model.ImgUrl">
+         //Uyarı spanları 
+        <span asp-validation-for="ImgUrl" class="text-danger"></span>
+    </div>  
+     <div class="form group">
+        <label for="CategoryId">Product Category Id</label>
+        <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
+            <option selected disabled>Choose Category</option>
+        </select>
+    </div>
+    
+    <button type="submit" style="margin-top: 3px;" class="btn btn-primary">Submit</button>
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+</form>  *@

@@ -1,0 +1,37 @@
+@model ProductDetailModel
+@* @section Categories
+{
+    @await Component.InvokeAsync("Categories")
+} *@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="~/img/@Model.Product.ImgUrl" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">@Model.Product.Name</h5>
+        <p class="card-text">@Model.Product.Description</p>
+           
+        <div>
+             <i class="fa fa-dollar"></i>@Model.Product.Price
+        </div>
+        @foreach (var item in @Model.Categories)
+        {
+            <a style="margin-top: 18px;" href="#" class="btn btn-link p-0 mb-3">@item.Name</a>
+        }
+       <br>
+        <br>
+        <br>
+        <div>
+          <button class="btn btn-primary btn-lg" style="margin-top:100px"><i class="fa fa-shopping-cart mr-1" ></i> Add to Card</button>
+        <p class="card-text" style="text-align: right; margin-top:max" ><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>

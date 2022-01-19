@@ -1,0 +1,52 @@
+@model CategoryListViewModel
+
+        <div class="card shadow" style="margin-bottom: 250px;;">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Category Lists</h6>
+            </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                            <a class="btn btn-primary btn-sm"  href="/admin/categories/create" style="margin-bottom: 13px;">Add Category</a>
+                        <table class="table table-bordered text-gray-800 mt-3" id="dataTable" width="100%"  cellspacing="0">
+                            <thead >
+                                <tr>
+                                    <td style="width: 30px;">Id</td>
+                                    <td>Name</td>
+                                    <td style="width: 150px;">Id</td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if(Model.Categories.Count>0)
+                                {
+                                        @foreach (var item in Model.Categories)
+                                        {
+                                            <tr>
+                                                <td>@item.CategoryId</td>                       
+                                                <td>@item.Name</td>                    
+                                                <td>
+                                                    <a href="/admin/categories/@item.CategoryId" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                                    <form action="/Admin/CategoryDelete/@item.CategoryId" style="display: inline;">
+                                                        <input type="hidden" name="CategoryId" value="@item.CategoryId">
+                                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
+                                                    
+                                                </td>
+                                        </tr>
+                                        }
+                                }
+                                else{
+                                    <div class="alert alert-warning">
+                                        <h3>No Categories</h3>
+                                    </div>
+                                }
+
+                                
+                            </tbody>
+    
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+      
